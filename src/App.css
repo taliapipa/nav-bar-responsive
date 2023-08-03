@@ -1,0 +1,11 @@
+.nav {
+  flex-direction: column;
+  display: flex;
+
+  transition: all 0.3s;  
+}
+
+.show-menu {
+  left: 0;
+  visibility: hidden;
+}

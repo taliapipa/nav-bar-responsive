@@ -1,13 +1,19 @@
 import './App.css'
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { useState } from 'react';
+import {AiOutlineClose, AiOutlineMenu} from "react-icons/ai"
 
 function App() {
+
+  const [showMenu, setShowMenu] = useState(false)
+
+
   return (
     <div className="App">
       <nav className='navBar'>
-        <h1><AiOutlineMenu/></h1>
-        <h1><AiOutlineClose/></h1>
-        <div className='elementsNav'>
+        <button onClick={()=> setShowMenu(!showMenu)}>
+          {showMenu ? <AiOutlineMenu/> : <AiOutlineClose/>  }
+        </button>
+        <div className={`nav ${showMenu ? 'show-menu' : ''}`}>
           <a href=''>Home</a>
           <a href=''>List</a>
           <a href=''>About</a>
